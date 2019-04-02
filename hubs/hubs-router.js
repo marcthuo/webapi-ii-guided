@@ -104,7 +104,7 @@ router.put('/:id', async (req, res) => {
       const messageInfo = { ...req.body, hub_id: req.params.id }
       try {
           const message = await Hubs.addMessage(messageInfo);
-            res.status(200).json(message);
+            res.status(201).json(message);
         } catch (error) {
             console.log(error)
             res.status(500).json({
